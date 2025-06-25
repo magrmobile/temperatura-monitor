@@ -7,7 +7,7 @@
         <h1>Ultimas Temperaturas</h1>
         <ul>
             @foreach($temps as $temp)
-                <li>{{ $temp->created_at }} - {{ $temp->temperature }}°C</li>
+                <li>{{ $temp->created_at }} - {{ $temp->valor }}°C</li>
             @endforeach
         </ul>
     </body>
