@@ -21,8 +21,6 @@ class TemperatureChart extends ApexChartWidget
      */
     protected static ?string $heading = 'Temperatura - Ultimas 24 horas';
 
-    protected static ?string $pollingInterval = '5s';
-
     /**
      * Chart options (series, labels, types, size, animations...)
      * https://apexcharts.com/docs/options
