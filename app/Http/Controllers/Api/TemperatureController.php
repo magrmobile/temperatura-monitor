@@ -30,12 +30,10 @@ class TemperatureController extends Controller
 
     public function store(Request $request)
     {
-        Log::info('Datos recibidos: ', $request->all());
+        Log::info('Headers:', $request->headers->all());
+        Log::info('Raw content:', [$request->getContent()]);
+        Log::info('Datos recibidos:', $request->all());
 
-        $temp = Temperature::create([
-            'valor' => $request->input('valor'),
-        ]);
-
-        return response()->json(['success' => true, 'id' => $temp->id]);
+        return response()->json(['ok' => true]);
     }
 }
