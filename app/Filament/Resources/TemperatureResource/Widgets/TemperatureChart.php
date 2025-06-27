@@ -38,6 +38,7 @@ class TemperatureChart extends ApexChartWidget
         return [
             'chart' => [
                 'type' => 'line',
+                'width' => '100%',
                 'height' => 300,
                 'zoom' => [
                     'enabled' => false,
