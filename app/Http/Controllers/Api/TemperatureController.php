@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Log;
 
 class TemperatureController extends Controller
 {
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
         $request->validate([
             'valor' => 'required|numeric', // Validating temperature value
@@ -26,5 +26,16 @@ class TemperatureController extends Controller
             Log::error("Error al guardar temperatura: " . $e->getMessage());
             return response()->json(['error' => 'No se pudo guardar la temperatura'], 500);
         }
+    }*/
+
+    public function store(Request $request)
+    {
+        Log::info('Datos recibidos: ', $request->all());
+
+        $temp = Temperature::create([
+            'valor' => $request->input('valor'),
+        ]);
+
+        return response()->json(['success' => true, 'id' => $temp->id]);
     }
 }
